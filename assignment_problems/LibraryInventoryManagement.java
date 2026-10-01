@@ -1,0 +1,34 @@
+// Week 6 Assignment - M1: Library Inventory Management
+// OOP approach: BookInventory class with constructor and printEntry()
+
+public class LibraryInventoryManagement {
+
+    static class BookInventory {
+        String title;
+        String author;
+        int copiesAvailable;
+
+        public BookInventory(String title, String author, int copiesAvailable) {
+            this.title = title;
+            this.author = author;
+            this.copiesAvailable = copiesAvailable;
+        }
+
+        public void printEntry() {
+            System.out.println(title + " by " + author + " - " + copiesAvailable + " copies available");
+        }
+    }
+
+    public static void main(String[] args) {
+        BookInventory[] inventory = {
+            new BookInventory("Clean Code", "Robert C. Martin", 3),
+            new BookInventory("Effective Java", "Joshua Bloch", 5),
+            new BookInventory("Refactoring", "Martin Fowler", 0),
+            new BookInventory("Design Patterns", "GoF", 2)
+        };
+
+        for (BookInventory book : inventory) {
+            book.printEntry();
+        }
+    }
+}
